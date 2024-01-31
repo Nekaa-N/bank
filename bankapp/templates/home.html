@@ -1,0 +1,52 @@
+    {% load static %}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>Loan Prediction Form</title>
+        <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    </head>
+    <body>
+        <img src="{% static 'img/img.jpeg' %}" alt="Form Header Image">
+        <h1>Insurance Prediction Form</h1>
+        <form id="InsurancePredictionForm" action="{% url 'result' %}" method="post">
+            {% csrf_token %}
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" value="60" min="0"><br>
+
+            <label for="sex">Sex:</label>
+            <select id="sex" name="sex">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select><br>
+
+            <label for="bmi">BMI:</label>
+            <input type="number" id="bmi" name="bmi" value="25" min="0"><br>
+
+            <label for="smoker">Smoker:</label>
+            <select id="smoker" name="smoker">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select><br>
+
+            <label for="region">Region:</label>
+            <select id="region" name="region">
+                <option value="Northwest">Northwest</option>
+                <option value="Northeast">Northeast</option>
+                <option value="Southwest">Southwest</option>
+                <option value="Southeast">Southeast</option>
+            </select><br>
+
+            <label for="children">Number of Children:</label>
+            <input type="number" id="children" name="children" value="1" min="0"><br>
+
+
+            </select><br>
+    
+            <button type="submit">Predict Status</button>
+        </form>
+    </body>
+    </html>
+    
